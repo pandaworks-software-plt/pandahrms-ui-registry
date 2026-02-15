@@ -144,6 +144,49 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "app-shell",
+      "type": "registry:ui",
+      "title": "App Shell",
+      "description": "A data-driven layout component with collapsible sidebar, header bar, and user menu.",
+      "dependencies": [
+        "@radix-ui/react-slot",
+        "@radix-ui/react-collapsible",
+        "@radix-ui/react-dropdown-menu",
+        "@radix-ui/react-tooltip",
+        "@radix-ui/react-separator",
+        "@radix-ui/react-dialog",
+        "@radix-ui/react-avatar",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "button",
+        "separator",
+        "sheet",
+        "tooltip",
+        "dropdown-menu",
+        "collapsible",
+        "avatar"
+      ],
+      "files": [
+        {
+          "path": "registry/default/app-shell/app-shell.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/app-shell/app-shell-types.ts",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/app-shell/sidebar.tsx",
+          "type": "registry:ui"
+        },
+        {
+          "path": "registry/default/app-shell/use-mobile.ts",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
