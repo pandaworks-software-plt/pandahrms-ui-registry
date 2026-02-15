@@ -65,7 +65,7 @@ export default function App() {
         ],
       }}
       header={
-        <div className="flex items-center gap-2">
+        <div className="flex w-full items-center gap-2">
           <span className="text-sm font-medium">Component Showcase</span>
           <div className="ml-auto">
             <ThemeToggle />
