@@ -1,3 +1,9 @@
+import {
+  LayoutDashboard,
+  Component,
+  User,
+  LogOut,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -16,25 +22,58 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { AppShell } from "@/components/ui/app-shell";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { InstallCommand } from "@/components/install-command";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-          <div>
-            <h1 className="text-lg font-semibold">pandahrms-ui-registry</h1>
-            <p className="text-sm text-muted-foreground">
-              Shared component registry for PandaHRMS
-            </p>
+    <AppShell
+      branding={{
+        name: "Pandahrms Registry",
+        href: "/",
+      }}
+      navigation={[
+        {
+          label: "Dashboard",
+          href: "/",
+          icon: LayoutDashboard,
+          active: true,
+        },
+        {
+          label: "Components",
+          href: "/components",
+          icon: Component,
+          items: [
+            { label: "Button", href: "/components/button" },
+            { label: "Card", href: "/components/card" },
+            { label: "Table", href: "/components/table" },
+          ],
+        },
+      ]}
+      user={{
+        name: "Ahmad Razif",
+        email: "ahmad@pandaworks.com",
+        actions: [
+          { label: "Profile", href: "/profile", icon: User },
+          {
+            label: "Sign Out",
+            onClick: () => {},
+            icon: LogOut,
+            variant: "destructive",
+          },
+        ],
+      }}
+      header={
+        <div className="flex items-center gap-2">
+          <span className="text-sm font-medium">Component Showcase</span>
+          <div className="ml-auto">
+            <ThemeToggle />
           </div>
-          <ThemeToggle />
         </div>
-      </header>
-
-      <main className="mx-auto max-w-4xl space-y-16 px-6 py-12">
+      }
+    >
+      <div className="space-y-16">
         {/* Button */}
         <section className="space-y-6">
           <div className="space-y-2">
@@ -169,7 +208,7 @@ export default function App() {
             </Table>
           </Card>
         </section>
-      </main>
-    </div>
+      </div>
+    </AppShell>
   );
 }
