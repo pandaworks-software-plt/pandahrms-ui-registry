@@ -19,7 +19,7 @@ import {
 import { ThemeToggle } from "@/components/theme-toggle";
 import { InstallCommand } from "@/components/install-command";
 
-export default function Page() {
+export default function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-10 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

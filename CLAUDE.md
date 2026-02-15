@@ -6,7 +6,9 @@ Shared shadcn/ui component registry for PandaHRMS frontend projects.
 
 ```bash
 pnpm registry:build          # Build registry JSON output to public/r/
-pnpm dev                     # Start dev server (for local testing)
+pnpm dev                     # Start Vite dev server (for local testing)
+pnpm build                   # Production build (outputs to dist/)
+pnpm preview                 # Preview production build locally
 ```
 
 ## Adding a Component
