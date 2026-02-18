@@ -65,6 +65,8 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { AppShell } from "@/components/ui/app-shell";
+import { DatePicker } from "@/components/ui/date-picker";
+import { DateRangePicker } from "@/components/ui/date-range-picker";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 // ---------------------------------------------------------------------------
@@ -233,8 +235,8 @@ function EmployeeFormDialog({
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="grid gap-2">
-                  <Label htmlFor="dob">Date of Birth</Label>
-                  <Input id="dob" type="date" />
+                  <Label>Date of Birth</Label>
+                  <DatePicker placeholder="Select date of birth" />
                 </div>
                 <div className="grid gap-2">
                   <Label>Gender</Label>
@@ -299,13 +301,21 @@ function EmployeeFormDialog({
                   </Select>
                 </div>
                 <div className="grid gap-2">
-                  <Label htmlFor="joinDate">Join Date</Label>
-                  <Input
-                    id="joinDate"
-                    type="date"
-                    defaultValue={employee?.joinDate}
+                  <Label>Join Date</Label>
+                  <DatePicker
+                    selected={employee ? new Date(employee.joinDate) : null}
+                    placeholder="Select join date"
                   />
                 </div>
+              </div>
+              <div className="grid gap-2">
+                <Label>Contract Period</Label>
+                <DateRangePicker
+                  startDate={undefined}
+                  endDate={undefined}
+                  onChange={() => {}}
+                  placeholder={{ start: "Contract start", end: "Contract end" }}
+                />
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="grid gap-2">
