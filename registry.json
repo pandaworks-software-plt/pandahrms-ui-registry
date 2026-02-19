@@ -337,6 +337,302 @@
       ]
     },
     {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "A checkbox input with checked, unchecked, and indeterminate states.",
+      "dependencies": [
+        "@radix-ui/react-checkbox"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/checkbox/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "A multi-line text input field for forms.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/textarea/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "description": "Form components with field context, validation, and accessible labels built on react-hook-form.",
+      "dependencies": [
+        "@radix-ui/react-label",
+        "@radix-ui/react-slot",
+        "react-hook-form"
+      ],
+      "registryDependencies": [
+        "label"
+      ],
+      "files": [
+        {
+          "path": "registry/default/form/form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "description": "A set of mutually exclusive radio options.",
+      "dependencies": [
+        "@radix-ui/react-radio-group"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/radio-group/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "A toggle switch for boolean on/off states.",
+      "dependencies": [
+        "@radix-ui/react-switch"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/switch/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "Skeleton",
+      "description": "An animated placeholder for loading content.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/skeleton/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "description": "A modal dialog for confirmations requiring user acknowledgement.",
+      "dependencies": [
+        "@radix-ui/react-alert-dialog"
+      ],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/alert-dialog/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "A callout for displaying important messages with default, destructive, and info variants.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/alert/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "Breadcrumb",
+      "description": "A navigation breadcrumb trail with links, separator, and ellipsis support.",
+      "dependencies": [
+        "@radix-ui/react-slot"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/breadcrumb/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "description": "A custom scrollable area with styled scrollbars.",
+      "dependencies": [
+        "@radix-ui/react-scroll-area"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/scroll-area/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "description": "A progress bar indicating completion status.",
+      "dependencies": [
+        "@radix-ui/react-progress"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/progress/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "A vertically stacked set of expandable content sections.",
+      "dependencies": [
+        "@radix-ui/react-accordion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/accordion/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "description": "A two-state button that can be toggled on or off.",
+      "dependencies": [
+        "@radix-ui/react-toggle",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/toggle/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "Toggle Group",
+      "description": "A group of toggle buttons supporting single or multiple selection.",
+      "dependencies": [
+        "@radix-ui/react-toggle-group",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "toggle"
+      ],
+      "files": [
+        {
+          "path": "registry/default/toggle-group/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "title": "Slider",
+      "description": "A range slider input with single and dual thumb support.",
+      "dependencies": [
+        "@radix-ui/react-slider"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/slider/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "A tabbed interface component with default and line variants, supporting horizontal and vertical orientations.",
+      "dependencies": [
+        "@radix-ui/react-tabs",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/tabs/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "Sonner",
+      "description": "A toast notification component powered by sonner with theme-aware styling.",
+      "dependencies": [
+        "sonner",
+        "next-themes"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/sonner/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "description": "A page navigation component with previous, next, page links, and ellipsis.",
+      "dependencies": [],
+      "registryDependencies": [
+        "button"
+      ],
+      "files": [
+        {
+          "path": "registry/default/pagination/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "app-shell",
       "type": "registry:ui",
       "title": "App Shell",
