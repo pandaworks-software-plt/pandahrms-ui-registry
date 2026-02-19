@@ -41,6 +41,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { SelectPicker } from "@/components/ui/select-picker";
 import {
   Dialog,
   DialogClose,
@@ -141,6 +142,42 @@ const STATUS_CONFIG: Record<
 };
 
 const DEPARTMENTS = ["Engineering", "Human Resources", "Finance", "Operations"];
+
+const SKILLS = [
+  { value: "react", label: "React" },
+  { value: "typescript", label: "TypeScript" },
+  { value: "nextjs", label: "Next.js" },
+  { value: "nodejs", label: "Node.js" },
+  { value: "python", label: "Python" },
+  { value: "dotnet", label: ".NET" },
+  { value: "sql", label: "SQL" },
+  { value: "devops", label: "DevOps" },
+  { value: "design", label: "UI/UX Design" },
+  { value: "pm", label: "Project Management" },
+];
+
+const COUNTRIES = [
+  "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria",
+  "Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan",
+  "Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia",
+  "Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo","Costa Rica",
+  "Croatia","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt",
+  "El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini","Ethiopia","Fiji","Finland","France","Gabon",
+  "Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea","Guinea-Bissau","Guyana",
+  "Haiti","Honduras","Hungary","Iceland","India","Indonesia","Iran","Iraq","Ireland","Israel",
+  "Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati","Kuwait","Kyrgyzstan","Laos",
+  "Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Madagascar","Malawi",
+  "Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius","Mexico","Micronesia","Moldova",
+  "Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar","Namibia","Nauru","Nepal","Netherlands",
+  "New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway","Oman","Pakistan","Palau",
+  "Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal","Qatar","Romania",
+  "Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino","Sao Tome and Principe","Saudi Arabia","Senegal",
+  "Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands","Somalia","South Africa","South Korea",
+  "South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland","Syria","Taiwan","Tajikistan",
+  "Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey","Turkmenistan","Tuvalu",
+  "Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","Uruguay","Uzbekistan","Vanuatu","Vatican City","Venezuela",
+  "Vietnam","Yemen","Zambia","Zimbabwe",
+].map((c) => ({ value: c.toLowerCase().replace(/\s+/g, "-"), label: c }));
 
 function getInitials(name: string) {
   return name
@@ -252,6 +289,30 @@ function EmployeeFormDialog({
                   </Select>
                 </div>
               </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="grid gap-2">
+                  <Label>Nationality (200+ options)</Label>
+                  <SelectPicker
+                    mode="single"
+                    value=""
+                    onChange={() => {}}
+                    placeholder="Search country..."
+                    searchPlaceholder="Type to filter countries..."
+                    options={COUNTRIES}
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <Label>Citizenships (multi, 200+)</Label>
+                  <SelectPicker
+                    mode="multiple"
+                    value={[]}
+                    onChange={() => {}}
+                    placeholder="Select citizenships..."
+                    searchPlaceholder="Type to filter countries..."
+                    options={COUNTRIES}
+                  />
+                </div>
+              </div>
             </fieldset>
 
             {/* Employment Details */}
@@ -328,21 +389,28 @@ function EmployeeFormDialog({
                 </div>
                 <div className="grid gap-2">
                   <Label>Reporting To</Label>
-                  <Select>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select manager..." />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {EMPLOYEES.filter((e) => e.id !== employee?.id).map(
-                        (e) => (
-                          <SelectItem key={e.id} value={e.id}>
-                            {e.name}
-                          </SelectItem>
-                        ),
-                      )}
-                    </SelectContent>
-                  </Select>
+                  <SelectPicker
+                    mode="single"
+                    value=""
+                    onChange={() => {}}
+                    placeholder="Search manager..."
+                    searchPlaceholder="Search by name..."
+                    options={EMPLOYEES.filter((e) => e.id !== employee?.id).map(
+                      (e) => ({ value: e.id, label: e.name }),
+                    )}
+                  />
                 </div>
+              </div>
+              <div className="grid gap-2">
+                <Label>Skills</Label>
+                <SelectPicker
+                  mode="multiple"
+                  value={[]}
+                  onChange={() => {}}
+                  placeholder="Select skills..."
+                  searchPlaceholder="Search skills..."
+                  options={SKILLS}
+                />
               </div>
             </fieldset>
 
