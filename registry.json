@@ -300,6 +300,43 @@
       ]
     },
     {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "description": "A command menu component built on cmdk for searchable lists and command palettes.",
+      "dependencies": [
+        "cmdk"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/command/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select-picker",
+      "type": "registry:ui",
+      "title": "Select Picker",
+      "description": "A searchable select picker supporting single and multiple selection with type-safe discriminated union props.",
+      "dependencies": [
+        "cmdk"
+      ],
+      "registryDependencies": [
+        "badge",
+        "button",
+        "command",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/select-picker/select-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "app-shell",
       "type": "registry:ui",
       "title": "App Shell",
