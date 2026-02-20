@@ -674,6 +674,29 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "filter-bar",
+      "type": "registry:ui",
+      "title": "Filter Bar",
+      "description": "A filter chips component with command-based field picker, supporting option lists, date ranges, and text search filters.",
+      "dependencies": [
+        "date-fns"
+      ],
+      "registryDependencies": [
+        "button",
+        "calendar",
+        "checkbox",
+        "command",
+        "input",
+        "popover"
+      ],
+      "files": [
+        {
+          "path": "registry/default/filter-bar/filter-bar.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

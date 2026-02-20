@@ -44,6 +44,7 @@ import ToggleGroupDemo from "./demos/toggle-group-demo";
 import SonnerDemo from "./demos/sonner-demo";
 import PaginationDemo from "./demos/pagination-demo";
 import AppShellDemo from "./demos/app-shell-demo";
+import FilterBarDemo from "./demos/filter-bar-demo";
 
 interface ComponentMeta {
   name: string;
@@ -300,6 +301,13 @@ const COMPONENTS: ComponentMeta[] = [
     description: "A page navigation component with previous, next, page links, and ellipsis.",
     demo: PaginationDemo,
   },
+  {
+    name: "filter-bar",
+    title: "Filter Bar",
+    description:
+      "A filter chips component with command-based field picker, supporting option lists, date ranges, and text search filters.",
+    demo: FilterBarDemo,
+  },
 ];
 
 const CATEGORIES: SidebarCategory[] = [
@@ -324,6 +332,7 @@ const CATEGORIES: SidebarCategory[] = [
         "date-picker",
         "date-range-picker",
         "slider",
+        "filter-bar",
       ].includes(c.name)
     ),
   },
