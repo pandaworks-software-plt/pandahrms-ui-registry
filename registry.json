@@ -697,6 +697,40 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "split-button",
+      "type": "registry:ui",
+      "title": "Split Button",
+      "description": "A compound split button with a primary action and a dropdown chevron for secondary actions.",
+      "dependencies": [
+        "@radix-ui/react-dropdown-menu",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "button",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "registry/default/split-button/split-button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:ui",
+      "title": "Page Header",
+      "description": "A page header with title, description, and action buttons slot for consistent page layouts.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/page-header/page-header.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

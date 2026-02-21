@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ShowcaseSidebar, type SidebarCategory } from "./showcase-sidebar";
 import { ComponentPage, DemoSection } from "./component-page";
@@ -44,7 +44,12 @@ import ToggleGroupDemo from "./demos/toggle-group-demo";
 import SonnerDemo from "./demos/sonner-demo";
 import PaginationDemo from "./demos/pagination-demo";
 import AppShellDemo from "./demos/app-shell-demo";
+import PageHeaderDemo from "./demos/page-header-demo";
 import FilterBarDemo from "./demos/filter-bar-demo";
+import SplitButtonDemo from "./demos/split-button-demo";
+import PatternBackgroundDemo from "./demos/pattern-background-demo";
+import ButtonPatternsDemo from "./demos/button-patterns-demo";
+import ButtonPatternsV2Demo from "./demos/button-patterns-v2-demo";
 
 interface ComponentMeta {
   name: string;
@@ -60,6 +65,13 @@ const COMPONENTS: ComponentMeta[] = [
     description:
       "A data-driven layout component with collapsible sidebar, header bar, and user menu.",
     demo: AppShellDemo,
+  },
+  {
+    name: "page-header",
+    title: "Page Header",
+    description:
+      "A page header with title, description, and action buttons slot for consistent page layouts.",
+    demo: PageHeaderDemo,
   },
   {
     name: "button",
@@ -308,12 +320,40 @@ const COMPONENTS: ComponentMeta[] = [
       "A filter chips component with command-based field picker, supporting option lists, date ranges, and text search filters.",
     demo: FilterBarDemo,
   },
+  {
+    name: "split-button",
+    title: "Split Button",
+    description:
+      "A compound split button with a primary action and a dropdown chevron for secondary actions.",
+    demo: SplitButtonDemo,
+  },
+  {
+    name: "button-patterns",
+    title: "Button Patterns",
+    description:
+      "A comparison gallery of 24 distinct button design directions to evaluate and choose from.",
+    demo: ButtonPatternsDemo,
+  },
+  {
+    name: "button-patterns-v2",
+    title: "Button Patterns v2",
+    description:
+      "24 modern, elastic button patterns with non-generic aesthetics -- spring physics, material metaphors, and typographic personality.",
+    demo: ButtonPatternsV2Demo,
+  },
+  {
+    name: "pattern-background",
+    title: "Pattern Background",
+    description:
+      "CSS utility classes that add subtle visual patterns like dots, grids, noise, and aurora blobs to any container.",
+    demo: PatternBackgroundDemo,
+  },
 ];
 
 const CATEGORIES: SidebarCategory[] = [
   {
     label: "Layout",
-    items: COMPONENTS.filter((c) => c.name === "app-shell"),
+    items: COMPONENTS.filter((c) => ["app-shell", "page-header"].includes(c.name)),
   },
   {
     label: "Forms",
@@ -333,6 +373,7 @@ const CATEGORIES: SidebarCategory[] = [
         "date-range-picker",
         "slider",
         "filter-bar",
+        "split-button",
       ].includes(c.name)
     ),
   },
@@ -369,13 +410,35 @@ const CATEGORIES: SidebarCategory[] = [
     ),
   },
   {
+    label: "Utilities",
+    items: COMPONENTS.filter((c) =>
+      ["button-patterns", "button-patterns-v2", "pattern-background"].includes(c.name)
+    ),
+  },
+  {
     label: "Examples",
     items: [{ name: "full-demo", title: "Employee Management" }],
   },
 ];
 
+function getHashComponent() {
+  const hash = window.location.hash.replace("#/", "");
+  const allNames = COMPONENTS.map((c) => c.name).concat("full-demo");
+  return allNames.includes(hash) ? hash : "button";
+}
+
 export default function ShowcaseApp() {
-  const [active, setActive] = useState("button");
+  const [active, setActive] = useState(getHashComponent);
+
+  useEffect(() => {
+    const onHashChange = () => setActive(getHashComponent());
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, []);
+
+  const handleSelect = useCallback((name: string) => {
+    window.location.hash = `#/${name}`;
+  }, []);
 
   const component = COMPONENTS.find((c) => c.name === active);
 
@@ -385,7 +448,7 @@ export default function ShowcaseApp() {
         <ShowcaseSidebar
           categories={CATEGORIES}
           active={active}
-          onSelect={setActive}
+          onSelect={handleSelect}
         />
         <main className="flex-1 overflow-y-auto">
           {active === "full-demo" ? (
