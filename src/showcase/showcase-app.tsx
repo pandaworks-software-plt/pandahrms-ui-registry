@@ -48,6 +48,7 @@ import PageHeaderDemo from "./demos/page-header-demo";
 import FilterBarDemo from "./demos/filter-bar-demo";
 import SplitButtonDemo from "./demos/split-button-demo";
 import PatternBackgroundDemo from "./demos/pattern-background-demo";
+import AttachmentInputDemo from "./demos/attachment-input-demo";
 import ButtonPatternsDemo from "./demos/button-patterns-demo";
 import ButtonPatternsV2Demo from "./demos/button-patterns-v2-demo";
 
@@ -314,6 +315,13 @@ const COMPONENTS: ComponentMeta[] = [
     demo: PaginationDemo,
   },
   {
+    name: "attachment-input",
+    title: "Attachment Input",
+    description:
+      "A file attachment input with dropzone and compact variants, supporting single and multiple file modes with validation.",
+    demo: AttachmentInputDemo,
+  },
+  {
     name: "filter-bar",
     title: "Filter Bar",
     description:
@@ -353,67 +361,69 @@ const COMPONENTS: ComponentMeta[] = [
 const CATEGORIES: SidebarCategory[] = [
   {
     label: "Layout",
-    items: COMPONENTS.filter((c) => ["app-shell", "page-header"].includes(c.name)),
+    items: COMPONENTS.filter((c) => ["app-shell", "page-header"].includes(c.name))
+      .sort((a, b) => a.title.localeCompare(b.title)),
   },
   {
     label: "Forms",
     items: COMPONENTS.filter((c) =>
       [
+        "attachment-input",
         "button",
-        "input",
-        "label",
         "checkbox",
-        "textarea",
-        "form",
-        "radio-group",
-        "switch",
-        "select",
-        "select-picker",
         "date-picker",
         "date-range-picker",
-        "slider",
         "filter-bar",
+        "form",
+        "input",
+        "label",
+        "radio-group",
+        "select",
+        "select-picker",
+        "slider",
         "split-button",
+        "switch",
+        "textarea",
       ].includes(c.name)
-    ),
+    ).sort((a, b) => a.title.localeCompare(b.title)),
   },
   {
     label: "Data Display",
     items: COMPONENTS.filter((c) =>
-      ["table", "card", "badge", "avatar", "calendar", "skeleton", "progress"].includes(c.name)
-    ),
+      ["avatar", "badge", "calendar", "card", "progress", "skeleton", "table"].includes(c.name)
+    ).sort((a, b) => a.title.localeCompare(b.title)),
   },
   {
     label: "Feedback",
     items: COMPONENTS.filter((c) =>
       ["alert", "alert-dialog", "sonner"].includes(c.name)
-    ),
+    ).sort((a, b) => a.title.localeCompare(b.title)),
   },
   {
     label: "Overlay",
     items: COMPONENTS.filter((c) =>
-      ["dialog", "sheet", "tooltip", "popover", "dropdown-menu"].includes(
+      ["dialog", "dropdown-menu", "popover", "sheet", "tooltip"].includes(
         c.name
       )
-    ),
+    ).sort((a, b) => a.title.localeCompare(b.title)),
   },
   {
     label: "Navigation",
     items: COMPONENTS.filter((c) =>
-      ["command", "collapsible", "accordion", "separator", "tabs", "breadcrumb", "scroll-area", "pagination"].includes(c.name)
-    ),
+      ["accordion", "breadcrumb", "collapsible", "command", "pagination", "scroll-area", "separator", "tabs"].includes(c.name)
+    ).sort((a, b) => a.title.localeCompare(b.title)),
   },
   {
     label: "Toggle",
     items: COMPONENTS.filter((c) =>
       ["toggle", "toggle-group"].includes(c.name)
-    ),
+    ).sort((a, b) => a.title.localeCompare(b.title)),
   },
   {
     label: "Utilities",
     items: COMPONENTS.filter((c) =>
       ["button-patterns", "button-patterns-v2", "pattern-background"].includes(c.name)
-    ),
+    ).sort((a, b) => a.title.localeCompare(b.title)),
   },
   {
     label: "Examples",
