@@ -14,6 +14,7 @@ export interface AppShellProps {
     actions?: UserAction[];
   };
   header?: React.ReactNode;
+  navbarActions?: React.ReactNode;
   children: React.ReactNode;
 }
 

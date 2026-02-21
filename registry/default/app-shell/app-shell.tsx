@@ -109,7 +109,7 @@ function NavItemCollapsible({ item }: { item: NavItem }) {
   );
 }
 
-function AppShell({ branding, navigation, user, header, children }: AppShellProps) {
+function AppShell({ branding, navigation, user, header, navbarActions, children }: AppShellProps) {
   return (
     <SidebarProvider>
       <Sidebar collapsible="icon">
@@ -271,6 +271,11 @@ function AppShell({ branding, navigation, user, header, children }: AppShellProp
                 <Separator orientation="vertical" className="mr-2 h-4" />
                 <div className="flex flex-1 items-center">{header}</div>
               </>
+            )}
+            {navbarActions && (
+              <div className="ml-auto flex items-center gap-1">
+                {navbarActions}
+              </div>
             )}
           </div>
         </header>
