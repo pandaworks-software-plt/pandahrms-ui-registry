@@ -731,6 +731,20 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "attachment-input",
+      "type": "registry:ui",
+      "title": "Attachment Input",
+      "description": "A file attachment input with dropzone and compact variants, supporting single and multiple file modes with validation.",
+      "dependencies": [],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/attachment-input/attachment-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }
