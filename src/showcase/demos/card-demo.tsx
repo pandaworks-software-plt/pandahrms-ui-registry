@@ -96,6 +96,106 @@ export default function CardDemo() {
           </CardFooter>
         </Card>
       </DemoSection>
+
+      <DemoSection title="Color Variants">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Card color="blue">
+            <CardHeader>
+              <CardTitle className="text-base">Blue</CardTitle>
+              <CardDescription>Gradient card with blue tint</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Suitable for informational or primary content cards.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card color="purple">
+            <CardHeader>
+              <CardTitle className="text-base">Purple</CardTitle>
+              <CardDescription>Gradient card with purple tint</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Great for creative or premium feature highlights.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card color="peach">
+            <CardHeader>
+              <CardTitle className="text-base">Peach</CardTitle>
+              <CardDescription>Gradient card with peach tint</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Warm and inviting for social or people-related content.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card color="indigo">
+            <CardHeader>
+              <CardTitle className="text-base">Indigo</CardTitle>
+              <CardDescription>Gradient card with indigo tint</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Works well for analytics or data-driven sections.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card color="green">
+            <CardHeader>
+              <CardTitle className="text-base">Green</CardTitle>
+              <CardDescription>Gradient card with green tint</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Ideal for success states or growth metrics.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card color="amber">
+            <CardHeader>
+              <CardTitle className="text-base">Amber</CardTitle>
+              <CardDescription>Gradient card with amber tint</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Good for warnings or attention-requiring content.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card color="rose">
+            <CardHeader>
+              <CardTitle className="text-base">Rose</CardTitle>
+              <CardDescription>Gradient card with rose tint</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Suited for urgent or high-priority information.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card color="teal">
+            <CardHeader>
+              <CardTitle className="text-base">Teal</CardTitle>
+              <CardDescription>Gradient card with teal tint</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p className="text-sm text-muted-foreground">
+                Perfect for health, wellness, or status cards.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </DemoSection>
     </>
   );
 }
