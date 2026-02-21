@@ -138,7 +138,7 @@ function DateRangePicker({
             <Button
               variant="outline"
               className={cn(
-                "h-10 w-full justify-start text-left font-normal",
+                "w-full justify-start text-left font-normal",
                 !localStartDate && "text-muted-foreground",
                 disabled && "cursor-not-allowed opacity-50"
               )}
@@ -160,7 +160,7 @@ function DateRangePicker({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="justify-start text-xs h-8"
+                  className="justify-start"
                   onClick={() => handleStartQuickSelect("today")}
                 >
                   Today
@@ -168,7 +168,7 @@ function DateRangePicker({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="justify-start text-xs h-8"
+                  className="justify-start"
                   onClick={() => handleStartQuickSelect("startOfMonth")}
                 >
                   Start of Month
@@ -176,7 +176,7 @@ function DateRangePicker({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="justify-start text-xs h-8"
+                  className="justify-start"
                   onClick={() => handleStartQuickSelect("startOfYear")}
                 >
                   Start of Year
@@ -210,7 +210,7 @@ function DateRangePicker({
             <Button
               variant="outline"
               className={cn(
-                "h-10 w-full justify-start text-left font-normal",
+                "w-full justify-start text-left font-normal",
                 !localEndDate && "text-muted-foreground",
                 disabled && "cursor-not-allowed opacity-50"
               )}
@@ -232,7 +232,7 @@ function DateRangePicker({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="justify-start text-xs h-8"
+                  className="justify-start"
                   onClick={() => handleEndQuickSelect("today")}
                 >
                   Today
@@ -240,7 +240,7 @@ function DateRangePicker({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="justify-start text-xs h-8"
+                  className="justify-start"
                   onClick={() => handleEndQuickSelect("endOfMonth")}
                 >
                   End of Month
@@ -248,7 +248,7 @@ function DateRangePicker({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="justify-start text-xs h-8"
+                  className="justify-start"
                   onClick={() => handleEndQuickSelect("endOfYear")}
                 >
                   End of Year
@@ -257,7 +257,7 @@ function DateRangePicker({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="justify-start text-xs h-8"
+                  className="justify-start"
                   onClick={() => handleEndQuickSelect("endOfNextMonth")}
                 >
                   End of Next Month
@@ -265,7 +265,7 @@ function DateRangePicker({
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="justify-start text-xs h-8"
+                  className="justify-start"
                   onClick={() => handleEndQuickSelect("endOfNextYear")}
                 >
                   End of Next Year

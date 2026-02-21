@@ -1,4 +1,4 @@
-import { Mail, Loader2 } from "lucide-react";
+import { Mail, Loader2, ArrowRight, Plus, Download, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { DemoSection } from "@/showcase/component-page";
 
@@ -8,9 +8,9 @@ export default function ButtonDemo() {
       <DemoSection title="Variants">
         <div className="flex flex-wrap items-center gap-3">
           <Button variant="default">Default</Button>
-          <Button variant="destructive">Destructive</Button>
-          <Button variant="outline">Outline</Button>
           <Button variant="secondary">Secondary</Button>
+          <Button variant="outline">Outline</Button>
+          <Button variant="destructive">Destructive</Button>
           <Button variant="ghost">Ghost</Button>
           <Button variant="link">Link</Button>
         </div>
@@ -18,11 +18,11 @@ export default function ButtonDemo() {
 
       <DemoSection title="Sizes">
         <div className="flex flex-wrap items-center gap-3">
-          <Button size="default">Default</Button>
           <Button size="sm">Small</Button>
+          <Button size="default">Default</Button>
           <Button size="lg">Large</Button>
           <Button size="icon">
-            <Mail className="h-4 w-4" />
+            <Plus />
           </Button>
         </div>
       </DemoSection>
@@ -30,12 +30,20 @@ export default function ButtonDemo() {
       <DemoSection title="With Icon">
         <div className="flex flex-wrap items-center gap-3">
           <Button>
-            <Mail className="mr-2 h-4 w-4" />
+            <Mail />
             Login with Email
           </Button>
           <Button variant="outline">
-            <Mail className="mr-2 h-4 w-4" />
-            Login with Email
+            <Download />
+            Export
+          </Button>
+          <Button variant="secondary">
+            Continue
+            <ArrowRight />
+          </Button>
+          <Button variant="destructive">
+            <Trash2 />
+            Delete
           </Button>
         </div>
       </DemoSection>
@@ -43,8 +51,12 @@ export default function ButtonDemo() {
       <DemoSection title="Loading">
         <div className="flex flex-wrap items-center gap-3">
           <Button disabled>
-            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+            <Loader2 className="animate-spin" />
             Please wait
+          </Button>
+          <Button variant="outline" disabled>
+            <Loader2 className="animate-spin" />
+            Saving...
           </Button>
         </div>
       </DemoSection>
@@ -52,14 +64,14 @@ export default function ButtonDemo() {
       <DemoSection title="Disabled">
         <div className="flex flex-wrap items-center gap-3">
           <Button disabled>Default</Button>
-          <Button variant="destructive" disabled>
-            Destructive
+          <Button variant="secondary" disabled>
+            Secondary
           </Button>
           <Button variant="outline" disabled>
             Outline
           </Button>
-          <Button variant="secondary" disabled>
-            Secondary
+          <Button variant="destructive" disabled>
+            Destructive
           </Button>
           <Button variant="ghost" disabled>
             Ghost

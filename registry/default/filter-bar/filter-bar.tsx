@@ -542,7 +542,7 @@ function AddFilterButton({
         <Button
           variant="outline"
           size="sm"
-          className="h-8 border-dashed"
+          className="border-dashed"
           disabled={allUsed}
         >
           <Plus className="mr-1 h-3.5 w-3.5" />

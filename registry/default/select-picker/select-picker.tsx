@@ -139,7 +139,7 @@ function SinglePicker({
           role="combobox"
           aria-expanded={open}
           className={cn(
-            "h-10 w-full justify-between font-normal",
+            "w-full justify-between font-normal",
             !selectedOption && "text-muted-foreground",
             disabled && "cursor-not-allowed opacity-50",
             className
@@ -244,7 +244,7 @@ function MultiplePicker({
           role="combobox"
           aria-expanded={open}
           className={cn(
-            "h-auto min-h-10 w-full justify-between font-normal",
+            "h-auto min-h-9 w-full justify-between font-normal",
             selectedOptions.length === 0 && "text-muted-foreground",
             disabled && "cursor-not-allowed opacity-50",
             className

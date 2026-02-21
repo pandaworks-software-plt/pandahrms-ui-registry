@@ -40,7 +40,7 @@ function DatePicker({
         <Button
           variant="outline"
           className={cn(
-            "h-10 w-full justify-start text-left font-normal",
+            "w-full justify-start text-left font-normal",
             !date && "text-muted-foreground",
             disabled && "cursor-not-allowed opacity-50",
             className
