@@ -745,6 +745,26 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "selectable-card",
+      "type": "registry:ui",
+      "title": "Selectable Card",
+      "description": "A composable card component for single (radio) or multi (checkbox) selection with size variants.",
+      "dependencies": [
+        "@radix-ui/react-radio-group",
+        "@radix-ui/react-checkbox",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "radio-group"
+      ],
+      "files": [
+        {
+          "path": "registry/default/selectable-card/selectable-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

@@ -49,6 +49,7 @@ import FilterBarDemo from "./demos/filter-bar-demo";
 import SplitButtonDemo from "./demos/split-button-demo";
 import PatternBackgroundDemo from "./demos/pattern-background-demo";
 import AttachmentInputDemo from "./demos/attachment-input-demo";
+import SelectableCardDemo from "./demos/selectable-card-demo";
 import ButtonPatternsDemo from "./demos/button-patterns-demo";
 import ButtonPatternsV2Demo from "./demos/button-patterns-v2-demo";
 
@@ -322,6 +323,13 @@ const COMPONENTS: ComponentMeta[] = [
     demo: AttachmentInputDemo,
   },
   {
+    name: "selectable-card",
+    title: "Selectable Card",
+    description:
+      "A composable card component for single (radio) or multi (checkbox) selection with size variants.",
+    demo: SelectableCardDemo,
+  },
+  {
     name: "filter-bar",
     title: "Filter Bar",
     description:
@@ -379,6 +387,7 @@ const CATEGORIES: SidebarCategory[] = [
         "label",
         "radio-group",
         "select",
+        "selectable-card",
         "select-picker",
         "slider",
         "split-button",
