@@ -53,6 +53,7 @@ import AttachmentInputDemo from "./demos/attachment-input-demo";
 import SelectableCardDemo from "./demos/selectable-card-demo";
 import ButtonPatternsDemo from "./demos/button-patterns-demo";
 import ButtonPatternsV2Demo from "./demos/button-patterns-v2-demo";
+import CodeLabelDemo from "./demos/code-label-demo";
 
 interface ComponentMeta {
   name: string;
@@ -372,6 +373,13 @@ const COMPONENTS: ComponentMeta[] = [
       "CSS utility classes that add subtle visual patterns like dots, grids, noise, and aurora blobs to any container.",
     demo: PatternBackgroundDemo,
   },
+  {
+    name: "code-label",
+    title: "Code Label",
+    description:
+      "An inline monospace label with a copy-to-clipboard button for displaying IDs, commands, and code snippets.",
+    demo: CodeLabelDemo,
+  },
 ];
 
 const CATEGORIES: SidebarCategory[] = [
@@ -407,7 +415,7 @@ const CATEGORIES: SidebarCategory[] = [
   {
     label: "Data Display",
     items: COMPONENTS.filter((c) =>
-      ["avatar", "badge", "calendar", "card", "progress", "skeleton", "table"].includes(c.name)
+      ["avatar", "badge", "calendar", "card", "code-label", "progress", "skeleton", "table"].includes(c.name)
     ).sort((a, b) => a.title.localeCompare(b.title)),
   },
   {

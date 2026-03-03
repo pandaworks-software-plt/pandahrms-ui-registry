@@ -781,6 +781,23 @@
           "type": "registry:ui"
         }
       ]
+    },
+    {
+      "name": "code-label",
+      "type": "registry:ui",
+      "title": "Code Label",
+      "description": "An inline monospace label with a copy-to-clipboard button, useful for displaying IDs, commands, and code snippets.",
+      "dependencies": [
+        "lucide-react",
+        "class-variance-authority"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/code-label/code-label.tsx",
+          "type": "registry:ui"
+        }
+      ]
     }
   ]
 }

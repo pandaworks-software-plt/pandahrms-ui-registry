@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "code-label",
+  "title": "Code Label",
+  "description": "An inline monospace label with a copy-to-clipboard button, useful for displaying IDs, commands, and code snippets.",
+  "dependencies": [
+    "lucide-react",
+    "class-variance-authority"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "registry/default/code-label/code-label.tsx",
+      "content": "\"use client\"\n\nimport * as React from \"react\"\nimport { cva, type VariantProps } from \"class-variance-authority\"\nimport { Copy, Check } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\nconst codeLabelVariants = cva(\n  \"inline-flex items-center gap-2 rounded-md border font-mono bg-muted/50 text-foreground dark:bg-muted/20\",\n  {\n    variants: {\n      size: {\n        default: \"px-3 py-1.5 text-sm\",\n        sm: \"px-2 py-1 text-xs\",\n      },\n    },\n    defaultVariants: {\n      size: \"default\",\n    },\n  }\n)\n\nexport interface CodeLabelProps\n  extends Omit<React.HTMLAttributes<HTMLDivElement>, \"children\">,\n    VariantProps<typeof codeLabelVariants> {\n  value: string\n}\n\nconst CodeLabel = React.forwardRef<HTMLDivElement, CodeLabelProps>(\n  ({ className, size, value, ...props }, ref) => {\n    const [copied, setCopied] = React.useState(false)\n    const timerRef = React.useRef<ReturnType<typeof setTimeout> | undefined>(\n      undefined\n    )\n\n    React.useEffect(() => () => clearTimeout(timerRef.current), [])\n\n    const handleCopy = React.useCallback(async () => {\n      try {\n        await navigator.clipboard.writeText(value)\n        setCopied(true)\n        clearTimeout(timerRef.current)\n        timerRef.current = setTimeout(() => setCopied(false), 2000)\n      } catch {\n        // Clipboard API unavailable (non-secure context)\n      }\n    }, [value])\n\n    return (\n      <div\n        ref={ref}\n        className={cn(codeLabelVariants({ size }), className)}\n        {...props}\n      >\n        <span className=\"min-w-0 truncate\">{value}</span>\n        <button\n          type=\"button\"\n          onClick={handleCopy}\n          className=\"inline-flex shrink-0 items-center justify-center rounded text-muted-foreground transition-colors hover:text-foreground\"\n          aria-label=\"Copy to clipboard\"\n        >\n          {copied ? (\n            <Check className=\"size-3.5\" />\n          ) : (\n            <Copy className=\"size-3.5\" />\n          )}\n        </button>\n      </div>\n    )\n  }\n)\nCodeLabel.displayName = \"CodeLabel\"\n\nexport { CodeLabel, codeLabelVariants }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}
