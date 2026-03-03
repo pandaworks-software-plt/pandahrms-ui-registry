@@ -679,7 +679,7 @@
       "name": "filter-bar",
       "type": "registry:ui",
       "title": "Filter Bar",
-      "description": "A filter chips component with command-based field picker, supporting option lists, date ranges, and text search filters.",
+      "description": "Two composable filter components: FilterButton trigger and ActiveFilters chips display with operators, supporting option lists, dates, and text search.",
       "dependencies": [
         "date-fns"
       ],
@@ -728,6 +728,22 @@
       "files": [
         {
           "path": "registry/default/page-header/page-header.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "detail-page",
+      "type": "registry:ui",
+      "title": "Detail Page",
+      "description": "A compound layout component for resource detail pages with header, 2-column content area, metadata sidebar, and copyable meta items.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "registry/default/detail-page/detail-page.tsx",
           "type": "registry:ui"
         }
       ]

@@ -45,6 +45,7 @@ import SonnerDemo from "./demos/sonner-demo";
 import PaginationDemo from "./demos/pagination-demo";
 import AppShellDemo from "./demos/app-shell-demo";
 import PageHeaderDemo from "./demos/page-header-demo";
+import DetailPageDemo from "./demos/detail-page-demo";
 import FilterBarDemo from "./demos/filter-bar-demo";
 import SplitButtonDemo from "./demos/split-button-demo";
 import PatternBackgroundDemo from "./demos/pattern-background-demo";
@@ -74,6 +75,13 @@ const COMPONENTS: ComponentMeta[] = [
     description:
       "A page header with title, description, and action buttons slot for consistent page layouts.",
     demo: PageHeaderDemo,
+  },
+  {
+    name: "detail-page",
+    title: "Detail Page",
+    description:
+      "A compound layout for resource detail pages with header, 2-column grid, metadata sidebar, and copyable meta items.",
+    demo: DetailPageDemo,
   },
   {
     name: "button",
@@ -333,7 +341,7 @@ const COMPONENTS: ComponentMeta[] = [
     name: "filter-bar",
     title: "Filter Bar",
     description:
-      "A filter chips component with command-based field picker, supporting option lists, date ranges, and text search filters.",
+      "Two composable filter components: a compact FilterButton trigger and ActiveFilters chips display with operators, supporting option lists, dates, and text search.",
     demo: FilterBarDemo,
   },
   {
@@ -369,7 +377,7 @@ const COMPONENTS: ComponentMeta[] = [
 const CATEGORIES: SidebarCategory[] = [
   {
     label: "Layout",
-    items: COMPONENTS.filter((c) => ["app-shell", "page-header"].includes(c.name))
+    items: COMPONENTS.filter((c) => ["app-shell", "detail-page", "page-header"].includes(c.name))
       .sort((a, b) => a.title.localeCompare(b.title)),
   },
   {
