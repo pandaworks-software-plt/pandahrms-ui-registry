@@ -1,7 +1,13 @@
-import { useState } from "react";
-import { Briefcase, MapPin, Users } from "lucide-react";
+import { useState, useMemo } from "react";
+import { Briefcase, MapPin, Search, Users } from "lucide-react";
 import { DemoSection } from "@/showcase/component-page";
-import { FilterBar, type ActiveFilter, type FilterField } from "@/components/ui/filter-bar";
+import {
+  FilterButton,
+  ActiveFilters,
+  type ActiveFilter,
+  type FilterField,
+} from "@/components/ui/filter-bar";
+import { Input } from "@/components/ui/input";
 
 const fields: FilterField[] = [
   {
@@ -27,6 +33,16 @@ const fields: FilterField[] = [
       { value: "hr", label: "Human Resources" },
       { value: "finance", label: "Finance" },
       { value: "operations", label: "Operations" },
+    ],
+  },
+  {
+    type: "option",
+    key: "banned",
+    label: "Banned",
+    multiple: false,
+    options: [
+      { value: "true", label: "True" },
+      { value: "false", label: "False" },
     ],
   },
   {
@@ -57,39 +73,72 @@ const fields: FilterField[] = [
   },
   {
     type: "date-range",
-    key: "joined",
-    label: "Joined",
+    key: "created",
+    label: "Created",
   },
   {
     type: "date",
-    key: "review-date",
-    label: "Review Date",
+    key: "lastSignedIn",
+    label: "Last signed in",
   },
   {
     type: "text",
     key: "name",
     label: "Name",
-    placeholder: "Search by employee name...",
+    placeholder: "Search by name...",
+  },
+  {
+    type: "text",
+    key: "email",
+    label: "Email",
+    placeholder: "Search by email...",
   },
 ];
 
 export default function FilterBarDemo() {
+  const [search, setSearch] = useState("");
   const [filters, setFilters] = useState<ActiveFilter[]>([]);
+  const activeKeys = useMemo(() => new Set(filters.map((f) => f.key)), [filters]);
+
+  const handleAdd = (key: string) => {
+    setFilters((prev) => [...prev, { key, type: "pending" }]);
+  };
+
   const [presetFilters, setPresetFilters] = useState<ActiveFilter[]>([
-    { key: "status", type: "option", values: ["active"] },
-    { key: "department", type: "option", values: ["engineering", "design"] },
-    { key: "name", type: "text", value: "John" },
+    { key: "created", type: "date-range", operator: "between", start: new Date(2026, 2, 4), end: new Date(2026, 2, 13) },
+    { key: "banned", type: "option", operator: "is", values: ["true"] },
   ]);
+  const presetActiveKeys = useMemo(() => new Set(presetFilters.map((f) => f.key)), [presetFilters]);
+
+  const handlePresetAdd = (key: string) => {
+    setPresetFilters((prev) => [...prev, { key, type: "pending" }]);
+  };
 
   return (
     <>
       <DemoSection title="Default">
         <div className="w-full space-y-3">
           <p className="text-sm text-muted-foreground">
-            Click &quot;Add filter&quot; to add filters. Each filter appears as
-            a removable chip. Click a chip to edit its value.
+            Click the filter icon to select a field. Active filters appear as
+            segmented chips below with operator and value controls.
           </p>
-          <FilterBar
+          <div className="flex items-center gap-2">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                placeholder="Search..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="pl-9"
+              />
+            </div>
+            <FilterButton
+              fields={fields}
+              activeKeys={activeKeys}
+              onAdd={handleAdd}
+            />
+          </div>
+          <ActiveFilters
             fields={fields}
             filters={filters}
             onChange={setFilters}
@@ -105,10 +154,25 @@ export default function FilterBarDemo() {
       <DemoSection title="With Pre-set Filters">
         <div className="w-full space-y-3">
           <p className="text-sm text-muted-foreground">
-            Filters can be initialized with values. Supports option, date range,
-            and text filter types.
+            Filters can be initialized with values including operators.
+            Matches the reference design with date range and boolean filters.
           </p>
-          <FilterBar
+          <div className="flex items-center gap-2">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <Input
+                placeholder="Search..."
+                className="pl-9"
+                readOnly
+              />
+            </div>
+            <FilterButton
+              fields={fields}
+              activeKeys={presetActiveKeys}
+              onAdd={handlePresetAdd}
+            />
+          </div>
+          <ActiveFilters
             fields={fields}
             filters={presetFilters}
             onChange={setPresetFilters}
