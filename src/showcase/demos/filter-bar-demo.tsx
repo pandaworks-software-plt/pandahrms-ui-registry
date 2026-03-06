@@ -116,7 +116,35 @@ export default function FilterBarDemo() {
 
   return (
     <>
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { useState, useMemo } from "react"
+import {
+  FilterButton,
+  ActiveFilters,
+  type ActiveFilter,
+  type FilterField,
+} from "@/components/ui/filter-bar"
+
+const fields: FilterField[] = [
+  {
+    type: "option",
+    key: "status",
+    label: "Status",
+    options: [
+      { value: "active", label: "Active" },
+      { value: "inactive", label: "Inactive" },
+    ],
+  },
+]
+
+const [filters, setFilters] = useState<ActiveFilter[]>([])
+const activeKeys = useMemo(() => new Set(filters.map((f) => f.key)), [filters])
+
+<FilterButton
+  fields={fields}
+  activeKeys={activeKeys}
+  onAdd={(key) => setFilters((prev) => [...prev, { key, type: "pending" }])}
+/>
+<ActiveFilters fields={fields} filters={filters} onChange={setFilters} />`}>
         <div className="w-full space-y-3">
           <p className="text-sm text-muted-foreground">
             Click the filter icon to select a field. Active filters appear as

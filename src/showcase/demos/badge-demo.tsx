@@ -4,7 +4,12 @@ import { Badge } from "@/components/ui/badge";
 export default function BadgeDemo() {
   return (
     <>
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { Badge } from "@/components/ui/badge"
+
+<Badge>Active</Badge>
+<Badge variant="secondary">Pending</Badge>
+<Badge variant="destructive">Rejected</Badge>
+<Badge variant="outline">Remote</Badge>`}>
         <div className="flex flex-wrap gap-2">
           <Badge>Active</Badge>
           <Badge>Full-time</Badge>

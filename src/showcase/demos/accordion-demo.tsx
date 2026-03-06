@@ -9,7 +9,19 @@ import { DemoSection } from "@/showcase/component-page";
 export default function AccordionDemo() {
   return (
     <div className="space-y-8">
-      <DemoSection title="Single">
+      <DemoSection title="Single" code={`import {
+  Accordion, AccordionContent,
+  AccordionItem, AccordionTrigger,
+} from "@/components/ui/accordion"
+
+<Accordion type="single" collapsible>
+  <AccordionItem value="item-1">
+    <AccordionTrigger>Is it accessible?</AccordionTrigger>
+    <AccordionContent>
+      Yes. It adheres to the WAI-ARIA design pattern.
+    </AccordionContent>
+  </AccordionItem>
+</Accordion>`}>
         <Accordion type="single" collapsible className="w-full max-w-md">
           <AccordionItem value="item-1">
             <AccordionTrigger>Is it accessible?</AccordionTrigger>

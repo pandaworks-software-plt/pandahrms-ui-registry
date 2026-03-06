@@ -2,7 +2,26 @@ import { DemoSection } from "@/showcase/component-page";
 
 export default function AppShellDemo() {
   return (
-    <DemoSection title="App Shell Layout">
+    <DemoSection title="App Shell Layout" code={`import { AppShell } from "@/components/ui/app-shell"
+import { Users, LayoutDashboard } from "lucide-react"
+
+<AppShell
+  branding={{ name: "MyApp", href: "/" }}
+  navigation={[
+    { label: "Dashboard", href: "/", icon: LayoutDashboard },
+    { label: "Users", href: "/users", icon: Users, active: true },
+  ]}
+  user={{
+    name: "John Doe",
+    email: "john@example.com",
+    actions: [
+      { label: "Sign Out", onClick: () => {} },
+    ],
+  }}
+  header={<span>Page Title</span>}
+>
+  {/* Page content */}
+</AppShell>`}>
       <div className="space-y-4">
         <p className="text-sm text-muted-foreground">
           The App Shell provides a complete application layout with a

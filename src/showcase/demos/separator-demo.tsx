@@ -4,7 +4,20 @@ import { Separator } from "@/components/ui/separator";
 export default function SeparatorDemo() {
   return (
     <>
-      <DemoSection title="Horizontal Separator">
+      <DemoSection title="Horizontal Separator" code={`import { Separator } from "@/components/ui/separator"
+
+<div className="space-y-4">
+  <p>Section One</p>
+  <Separator />
+  <p>Section Two</p>
+</div>
+
+{/* Vertical */}
+<div className="flex h-5 items-center space-x-4">
+  <span>Item A</span>
+  <Separator orientation="vertical" />
+  <span>Item B</span>
+</div>`}>
         <div className="space-y-4">
           <div>
             <h3 className="text-lg font-medium">Pandahrms</h3>

@@ -13,7 +13,16 @@ export default function CollapsibleDemo() {
 
   return (
     <div className="space-y-8">
-      <DemoSection title="Basic Collapsible">
+      <DemoSection title="Basic Collapsible" code={`import {
+  Collapsible, CollapsibleContent, CollapsibleTrigger,
+} from "@/components/ui/collapsible"
+
+<Collapsible>
+  <CollapsibleTrigger>Toggle</CollapsibleTrigger>
+  <CollapsibleContent>
+    Content that can be collapsed.
+  </CollapsibleContent>
+</Collapsible>`}>
         <div className="max-w-sm">
           <Collapsible open={isOpen} onOpenChange={setIsOpen}>
             <div className="flex items-center justify-between space-x-4">

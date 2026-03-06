@@ -68,7 +68,27 @@ function StatusBadge({ status }: { status: string }) {
 export default function TableDemo() {
   return (
     <>
-      <DemoSection title="Employee Table">
+      <DemoSection title="Employee Table" code={`import {
+  Table, TableBody, TableCell,
+  TableHead, TableHeader, TableRow,
+} from "@/components/ui/table"
+
+<Table>
+  <TableHeader>
+    <TableRow>
+      <TableHead>Name</TableHead>
+      <TableHead>Department</TableHead>
+      <TableHead>Status</TableHead>
+    </TableRow>
+  </TableHeader>
+  <TableBody>
+    <TableRow>
+      <TableCell>Sarah Johnson</TableCell>
+      <TableCell>Engineering</TableCell>
+      <TableCell>Active</TableCell>
+    </TableRow>
+  </TableBody>
+</Table>`}>
         <Table>
           <TableHeader>
             <TableRow>

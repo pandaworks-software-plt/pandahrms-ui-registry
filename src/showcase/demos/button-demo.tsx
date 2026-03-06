@@ -5,7 +5,14 @@ import { DemoSection } from "@/showcase/component-page";
 export default function ButtonDemo() {
   return (
     <div className="space-y-8">
-      <DemoSection title="Variants">
+      <DemoSection title="Variants" code={`import { Button } from "@/components/ui/button"
+
+<Button variant="default">Default</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="outline">Outline</Button>
+<Button variant="destructive">Destructive</Button>
+<Button variant="ghost">Ghost</Button>
+<Button variant="link">Link</Button>`}>
         <div className="flex flex-wrap items-center gap-3">
           <Button variant="default">Default</Button>
           <Button variant="secondary">Secondary</Button>
@@ -27,7 +34,13 @@ export default function ButtonDemo() {
         </div>
       </DemoSection>
 
-      <DemoSection title="With Icon">
+      <DemoSection title="With Icon" code={`import { Mail } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
+<Button>
+  <Mail />
+  Login with Email
+</Button>`}>
         <div className="flex flex-wrap items-center gap-3">
           <Button>
             <Mail />

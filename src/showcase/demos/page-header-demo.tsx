@@ -6,7 +6,23 @@ import { Button } from "@/components/ui/button";
 export default function PageHeaderDemo() {
   return (
     <>
-      <DemoSection title="List page">
+      <DemoSection title="List page" code={`import { PageHeader } from "@/components/ui/page-header"
+import { Button } from "@/components/ui/button"
+import { Plus } from "lucide-react"
+
+<PageHeader
+  title="Employees"
+  description="Manage your team members."
+  actions={
+    <>
+      <Button variant="outline" size="sm">Export</Button>
+      <Button size="sm">
+        <Plus className="size-4 mr-2" />
+        Add Employee
+      </Button>
+    </>
+  }
+/>`}>
         <PageHeader
           title="Employees"
           description="Manage your team members and their information."

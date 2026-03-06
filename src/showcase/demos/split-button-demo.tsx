@@ -32,7 +32,27 @@ export default function SplitButtonDemo() {
 
   return (
     <div className="space-y-8">
-      <DemoSection title="Basic">
+      <DemoSection title="Basic" code={`import { Save, FileText, Send } from "lucide-react"
+import {
+  SplitButton,
+  SplitButtonAction,
+  SplitButtonMenu,
+  SplitButtonMenuItem,
+} from "@/components/ui/split-button"
+
+<SplitButton>
+  <SplitButtonAction onClick={handleSave}>
+    <Save /> Save
+  </SplitButtonAction>
+  <SplitButtonMenu>
+    <SplitButtonMenuItem onSelect={handleDraft}>
+      <FileText /> Save as Draft
+    </SplitButtonMenuItem>
+    <SplitButtonMenuItem onSelect={handleSubmit}>
+      <Send /> Save and Submit
+    </SplitButtonMenuItem>
+  </SplitButtonMenu>
+</SplitButton>`}>
         <div className="flex flex-wrap items-center gap-4">
           <SplitButton>
             <SplitButtonAction onClick={() => {}}>

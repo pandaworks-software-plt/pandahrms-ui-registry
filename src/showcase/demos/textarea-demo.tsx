@@ -5,7 +5,9 @@ import { DemoSection } from "@/showcase/component-page";
 export default function TextareaDemo() {
   return (
     <div className="space-y-8">
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { Textarea } from "@/components/ui/textarea"
+
+<Textarea placeholder="Type your message here." />`}>
         <div className="grid w-full max-w-sm gap-1.5">
           <Textarea placeholder="Type your message here." />
         </div>

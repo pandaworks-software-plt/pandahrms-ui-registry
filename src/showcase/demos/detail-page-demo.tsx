@@ -259,7 +259,32 @@ function OrganizationDetailDemo() {
 export default function DetailPageDemo() {
   return (
     <>
-      <DemoSection title="Organization detail page">
+      <DemoSection title="Organization detail page" code={`import {
+  DetailPage, DetailPageHeader, DetailPageMain,
+  DetailPageContent, DetailPageSidebar,
+  DetailPageMetaItem,
+} from "@/components/ui/detail-page"
+import { Building2 } from "lucide-react"
+
+<DetailPage>
+  <DetailPageHeader
+    backHref="/organizations"
+    backLabel="Organizations"
+    icon={<Building2 className="size-6" />}
+    title="Pandaworks"
+    subtitle="12 members"
+    actions={<Button size="sm">Edit</Button>}
+  />
+  <DetailPageMain>
+    <DetailPageContent>
+      {/* Main content area */}
+    </DetailPageContent>
+    <DetailPageSidebar>
+      <DetailPageMetaItem label="Created" value="Mar 3, 2026" />
+      <DetailPageMetaItem label="ID" value="org_abc123" copyable />
+    </DetailPageSidebar>
+  </DetailPageMain>
+</DetailPage>`}>
         <OrganizationDetailDemo />
       </DemoSection>
 

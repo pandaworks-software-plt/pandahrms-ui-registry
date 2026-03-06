@@ -32,7 +32,18 @@ export default function AttachmentInputDemo() {
 
   return (
     <>
-      <DemoSection title="Single File (Dropzone)">
+      <DemoSection title="Single File (Dropzone)" code={`import { useState } from "react"
+import { AttachmentInput, type AttachmentFile } from "@/components/ui/attachment-input"
+
+const [file, setFile] = useState<AttachmentFile | null>(null)
+
+<AttachmentInput
+  mode="single"
+  value={file}
+  onChange={setFile}
+  accept="image/*,.pdf"
+  maxSize={10 * 1024 * 1024}
+/>`}>
         <div className="grid w-full max-w-md gap-1.5">
           <p className="text-sm text-muted-foreground">
             Select a single file. Choosing a new file replaces the current one.

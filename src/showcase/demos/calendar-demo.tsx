@@ -7,7 +7,17 @@ export default function CalendarDemo() {
 
   return (
     <div className="space-y-8">
-      <DemoSection title="Single Date Selection">
+      <DemoSection title="Single Date Selection" code={`import { useState } from "react"
+import { Calendar } from "@/components/ui/calendar"
+
+const [date, setDate] = useState<Date | undefined>(new Date())
+
+<Calendar
+  mode="single"
+  selected={date}
+  onSelect={setDate}
+  className="rounded-md border"
+/>`}>
         <div className="flex justify-center">
           <Calendar
             mode="single"

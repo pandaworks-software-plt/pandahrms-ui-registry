@@ -14,7 +14,23 @@ import { Label } from "@/components/ui/label";
 export default function CardDemo() {
   return (
     <>
-      <DemoSection title="Basic Card">
+      <DemoSection title="Basic Card" code={`import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+
+<Card>
+  <CardHeader>
+    <CardTitle>Employee Overview</CardTitle>
+    <CardDescription>Summary of team members.</CardDescription>
+  </CardHeader>
+  <CardContent>
+    <p>Total Employees: 142</p>
+  </CardContent>
+</Card>`}>
         <Card className="max-w-sm">
           <CardHeader>
             <CardTitle>Employee Overview</CardTitle>

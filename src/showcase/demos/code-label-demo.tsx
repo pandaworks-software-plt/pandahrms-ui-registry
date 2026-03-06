@@ -4,7 +4,10 @@ import { CodeLabel } from "@/components/ui/code-label";
 export default function CodeLabelDemo() {
   return (
     <>
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { CodeLabel } from "@/components/ui/code-label"
+
+<CodeLabel value="pnpm dlx shadcn@latest add button" />
+<CodeLabel value="EMP-2024-001" size="sm" />`}>
         <div className="flex flex-col gap-3">
           <CodeLabel value="pnpm dlx shadcn@latest add button" />
           <CodeLabel value="npm install @pandahrms/ui" />

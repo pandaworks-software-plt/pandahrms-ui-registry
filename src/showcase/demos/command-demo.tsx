@@ -22,7 +22,21 @@ import {
 export default function CommandDemo() {
   return (
     <>
-      <DemoSection title="Command Palette">
+      <DemoSection title="Command Palette" code={`import {
+  Command, CommandEmpty, CommandGroup,
+  CommandInput, CommandItem, CommandList,
+} from "@/components/ui/command"
+
+<Command>
+  <CommandInput placeholder="Search..." />
+  <CommandList>
+    <CommandEmpty>No results found.</CommandEmpty>
+    <CommandGroup heading="Suggestions">
+      <CommandItem>Calendar</CommandItem>
+      <CommandItem>Search</CommandItem>
+    </CommandGroup>
+  </CommandList>
+</Command>`}>
         <Command className="rounded-lg border shadow-md md:min-w-[450px]">
           <CommandInput placeholder="Type a command or search..." />
           <CommandList>

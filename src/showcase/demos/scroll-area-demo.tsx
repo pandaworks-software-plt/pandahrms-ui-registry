@@ -7,7 +7,15 @@ const tags = Array.from({ length: 50 }).map((_, i) => `Tag ${i + 1}`);
 export default function ScrollAreaDemo() {
   return (
     <div className="space-y-8">
-      <DemoSection title="Vertical">
+      <DemoSection title="Vertical" code={`import { ScrollArea } from "@/components/ui/scroll-area"
+
+<ScrollArea className="h-72 w-48 rounded-md border">
+  <div className="p-4">
+    {items.map((item) => (
+      <div key={item} className="text-sm">{item}</div>
+    ))}
+  </div>
+</ScrollArea>`}>
         <ScrollArea className="h-72 w-48 rounded-md border">
           <div className="p-4">
             <h4 className="mb-4 text-sm font-medium leading-none">Tags</h4>

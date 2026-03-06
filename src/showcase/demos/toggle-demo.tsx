@@ -5,7 +5,17 @@ import { DemoSection } from "@/showcase/component-page";
 export default function ToggleDemo() {
   return (
     <div className="space-y-8">
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { Bold, Italic } from "lucide-react"
+import { Toggle } from "@/components/ui/toggle"
+
+<Toggle aria-label="Toggle bold">
+  <Bold />
+</Toggle>
+
+<Toggle variant="outline" aria-label="Toggle italic">
+  <Italic />
+  Italic
+</Toggle>`}>
         <div className="flex gap-2">
           <Toggle aria-label="Toggle bold">
             <Bold />

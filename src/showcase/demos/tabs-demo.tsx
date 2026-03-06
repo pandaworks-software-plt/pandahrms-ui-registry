@@ -5,7 +5,20 @@ import { DemoSection } from "@/showcase/component-page";
 export default function TabsDemo() {
   return (
     <div className="space-y-8">
-      <DemoSection title="Default Variant">
+      <DemoSection title="Default Variant" code={`import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+
+<Tabs defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Account</TabsTrigger>
+    <TabsTrigger value="password">Password</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">
+    Account settings here.
+  </TabsContent>
+  <TabsContent value="password">
+    Password settings here.
+  </TabsContent>
+</Tabs>`}>
         <Tabs defaultValue="account" className="w-full max-w-md">
           <TabsList>
             <TabsTrigger value="account">Account</TabsTrigger>

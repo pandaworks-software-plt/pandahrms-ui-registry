@@ -15,7 +15,21 @@ export default function DateRangePickerDemo() {
 
   return (
     <>
-      <DemoSection title="Date Range Picker">
+      <DemoSection title="Date Range Picker" code={`import { useState } from "react"
+import { DateRangePicker } from "@/components/ui/date-range-picker"
+
+const [startDate, setStartDate] = useState<Date | undefined>()
+const [endDate, setEndDate] = useState<Date | undefined>()
+
+<DateRangePicker
+  startDate={startDate}
+  endDate={endDate}
+  onChange={([start, end]) => {
+    setStartDate(start ?? undefined)
+    setEndDate(end ?? undefined)
+  }}
+  placeholder={{ start: "Start date", end: "End date" }}
+/>`}>
         <div className="grid w-full max-w-lg gap-1.5">
           <p className="text-sm text-muted-foreground">
             Select a start and end date. Each calendar includes quick-select

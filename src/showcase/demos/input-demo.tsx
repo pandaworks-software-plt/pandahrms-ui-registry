@@ -5,7 +5,9 @@ import { Label } from "@/components/ui/label";
 export default function InputDemo() {
   return (
     <>
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { Input } from "@/components/ui/input"
+
+<Input placeholder="Search employees..." />`}>
         <div className="max-w-sm">
           <Input />
         </div>

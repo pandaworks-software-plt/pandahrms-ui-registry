@@ -10,7 +10,24 @@ import { DemoSection } from "@/showcase/component-page";
 export default function SelectDemo() {
   return (
     <div className="space-y-8">
-      <DemoSection title="Basic Select">
+      <DemoSection title="Basic Select" code={`import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+
+<Select>
+  <SelectTrigger>
+    <SelectValue placeholder="Select a fruit..." />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="apple">Apple</SelectItem>
+    <SelectItem value="banana">Banana</SelectItem>
+    <SelectItem value="cherry">Cherry</SelectItem>
+  </SelectContent>
+</Select>`}>
         <div className="max-w-xs">
           <Select>
             <SelectTrigger>

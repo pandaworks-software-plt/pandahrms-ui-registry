@@ -24,7 +24,24 @@ import { DemoSection } from "@/showcase/component-page";
 export default function DropdownMenuDemo() {
   return (
     <div className="space-y-8">
-      <DemoSection title="Basic Dropdown Menu">
+      <DemoSection title="Basic Dropdown Menu" code={`import {
+  DropdownMenu, DropdownMenuContent,
+  DropdownMenuItem, DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { Button } from "@/components/ui/button"
+
+<DropdownMenu>
+  <DropdownMenuTrigger asChild>
+    <Button variant="outline">Open Menu</Button>
+  </DropdownMenuTrigger>
+  <DropdownMenuContent>
+    <DropdownMenuItem>Profile</DropdownMenuItem>
+    <DropdownMenuItem>Settings</DropdownMenuItem>
+    <DropdownMenuSeparator />
+    <DropdownMenuItem>Log out</DropdownMenuItem>
+  </DropdownMenuContent>
+</DropdownMenu>`}>
         <div className="flex justify-center">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>

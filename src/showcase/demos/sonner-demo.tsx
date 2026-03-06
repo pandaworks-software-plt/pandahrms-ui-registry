@@ -8,7 +8,17 @@ export default function SonnerDemo() {
     <div className="space-y-8">
       <Toaster />
 
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { toast } from "sonner"
+import { Button } from "@/components/ui/button"
+
+<Button
+  variant="outline"
+  onClick={() => toast("Event has been created", {
+    description: "Sunday, December 03, 2023 at 9:00 AM",
+  })}
+>
+  Show Toast
+</Button>`}>
         <div className="flex flex-wrap gap-3">
           <Button
             variant="outline"

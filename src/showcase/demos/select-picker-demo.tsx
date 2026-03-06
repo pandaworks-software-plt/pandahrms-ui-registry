@@ -29,7 +29,20 @@ export default function SelectPickerDemo() {
 
   return (
     <>
-      <DemoSection title="Single Select">
+      <DemoSection title="Single Select" code={`import { SelectPicker } from "@/components/ui/select-picker"
+
+const options = [
+  { value: "apple", label: "Apple" },
+  { value: "banana", label: "Banana" },
+]
+
+<SelectPicker
+  mode="single"
+  value={value}
+  onChange={setValue}
+  placeholder="Select a fruit..."
+  options={options}
+/>`}>
         <div className="grid w-full max-w-sm gap-1.5">
           <p className="text-sm text-muted-foreground">
             Select a single item from the dropdown. Supports search filtering.
@@ -49,7 +62,21 @@ export default function SelectPickerDemo() {
         </div>
       </DemoSection>
 
-      <DemoSection title="Multiple Select">
+      <DemoSection title="Multiple Select" code={`import { SelectPicker } from "@/components/ui/select-picker"
+
+const options = [
+  { value: "react", label: "React" },
+  { value: "typescript", label: "TypeScript" },
+  { value: "nextjs", label: "Next.js" },
+]
+
+<SelectPicker
+  mode="multiple"
+  value={values}
+  onChange={setValues}
+  placeholder="Select skills..."
+  options={options}
+/>`}>
         <div className="grid w-full max-w-sm gap-1.5">
           <p className="text-sm text-muted-foreground">
             Select multiple items. Selected items appear as removable badges.

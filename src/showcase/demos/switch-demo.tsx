@@ -8,7 +8,13 @@ export default function SwitchDemo() {
 
   return (
     <div className="space-y-8">
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { Switch } from "@/components/ui/switch"
+import { Label } from "@/components/ui/label"
+
+<div className="flex items-center gap-2">
+  <Switch id="airplane" checked={enabled} onCheckedChange={setEnabled} />
+  <Label htmlFor="airplane">Airplane Mode</Label>
+</div>`}>
         <div className="flex items-center gap-2">
           <Switch id="airplane" checked={enabled} onCheckedChange={setEnabled} />
           <Label htmlFor="airplane">Airplane Mode</Label>

@@ -208,7 +208,19 @@ function DisabledDemo() {
 export default function SelectableCardDemo() {
   return (
     <>
-      <DemoSection title="Single Select (Radio)">
+      <DemoSection title="Single Select (Radio)" code={`import { SelectableCard } from "@/components/ui/selectable-card"
+import { RadioGroup } from "@/components/ui/radio-group"
+
+<RadioGroup value={value} onValueChange={setValue} className="grid gap-3">
+  <SelectableCard value="option-a">
+    <p className="font-medium">Option A</p>
+    <p className="text-sm text-muted-foreground">Description for option A</p>
+  </SelectableCard>
+  <SelectableCard value="option-b">
+    <p className="font-medium">Option B</p>
+    <p className="text-sm text-muted-foreground">Description for option B</p>
+  </SelectableCard>
+</RadioGroup>`}>
         <div className="max-w-lg">
           <SingleSelectDemo />
         </div>

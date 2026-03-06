@@ -16,7 +16,28 @@ const SIDES = ["top", "right", "bottom", "left"] as const;
 export default function SheetDemo() {
   return (
     <>
-      <DemoSection title="Sheet Sides">
+      <DemoSection title="Sheet Sides" code={`import {
+  Sheet, SheetContent, SheetDescription,
+  SheetHeader, SheetTitle, SheetTrigger,
+} from "@/components/ui/sheet"
+import { Button } from "@/components/ui/button"
+
+<Sheet>
+  <SheetTrigger asChild>
+    <Button variant="outline">Open Sheet</Button>
+  </SheetTrigger>
+  <SheetContent side="right">
+    <SheetHeader>
+      <SheetTitle>Sheet Title</SheetTitle>
+      <SheetDescription>
+        Sheet description goes here.
+      </SheetDescription>
+    </SheetHeader>
+    <div className="py-4">
+      {/* Sheet content */}
+    </div>
+  </SheetContent>
+</Sheet>`}>
         <div className="flex flex-wrap gap-2">
           {SIDES.map((side) => (
             <Sheet key={side}>

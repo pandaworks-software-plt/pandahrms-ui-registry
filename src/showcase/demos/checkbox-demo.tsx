@@ -8,7 +8,13 @@ export default function CheckboxDemo() {
 
   return (
     <div className="space-y-8">
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { Checkbox } from "@/components/ui/checkbox"
+import { Label } from "@/components/ui/label"
+
+<div className="flex items-center gap-3">
+  <Checkbox id="terms" checked={checked} onCheckedChange={setChecked} />
+  <Label htmlFor="terms">Accept terms and conditions</Label>
+</div>`}>
         <div className="flex items-center gap-3">
           <Checkbox id="default" checked={checked} onCheckedChange={(v) => setChecked(v === true)} />
           <Label htmlFor="default">Accept terms and conditions</Label>

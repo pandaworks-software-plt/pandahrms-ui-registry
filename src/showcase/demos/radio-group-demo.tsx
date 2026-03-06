@@ -8,7 +8,19 @@ export default function RadioGroupDemo() {
 
   return (
     <div className="space-y-8">
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Label } from "@/components/ui/label"
+
+<RadioGroup value={value} onValueChange={setValue}>
+  <div className="flex items-center gap-2">
+    <RadioGroupItem value="default" id="r1" />
+    <Label htmlFor="r1">Default</Label>
+  </div>
+  <div className="flex items-center gap-2">
+    <RadioGroupItem value="comfortable" id="r2" />
+    <Label htmlFor="r2">Comfortable</Label>
+  </div>
+</RadioGroup>`}>
         <RadioGroup value={value} onValueChange={setValue}>
           <div className="flex items-center gap-2">
             <RadioGroupItem value="default" id="r1" />

@@ -5,7 +5,20 @@ import { DemoSection } from "@/showcase/component-page";
 export default function ToggleGroupDemo() {
   return (
     <div className="space-y-8">
-      <DemoSection title="Single">
+      <DemoSection title="Single" code={`import { AlignLeft, AlignCenter, AlignRight } from "lucide-react"
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+
+<ToggleGroup type="single" defaultValue="center">
+  <ToggleGroupItem value="left" aria-label="Align left">
+    <AlignLeft />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="center" aria-label="Align center">
+    <AlignCenter />
+  </ToggleGroupItem>
+  <ToggleGroupItem value="right" aria-label="Align right">
+    <AlignRight />
+  </ToggleGroupItem>
+</ToggleGroup>`}>
         <ToggleGroup type="single" defaultValue="center">
           <ToggleGroupItem value="left" aria-label="Align left">
             <AlignLeft />

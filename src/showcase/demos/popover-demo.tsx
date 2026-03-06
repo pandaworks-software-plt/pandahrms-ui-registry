@@ -7,7 +7,24 @@ import { DemoSection } from "@/showcase/component-page";
 export default function PopoverDemo() {
   return (
     <div className="space-y-8">
-      <DemoSection title="Basic Popover">
+      <DemoSection title="Basic Popover" code={`import {
+  Popover, PopoverContent, PopoverTrigger,
+} from "@/components/ui/popover"
+import { Button } from "@/components/ui/button"
+
+<Popover>
+  <PopoverTrigger asChild>
+    <Button variant="outline">Open Popover</Button>
+  </PopoverTrigger>
+  <PopoverContent className="w-80">
+    <div className="grid gap-4">
+      <h4 className="font-medium leading-none">Title</h4>
+      <p className="text-sm text-muted-foreground">
+        Popover content goes here.
+      </p>
+    </div>
+  </PopoverContent>
+</Popover>`}>
         <div className="flex justify-center">
           <Popover>
             <PopoverTrigger asChild>

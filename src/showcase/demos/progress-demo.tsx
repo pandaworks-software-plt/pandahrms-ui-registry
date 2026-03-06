@@ -12,7 +12,9 @@ export default function ProgressDemo() {
 
   return (
     <div className="space-y-8">
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { Progress } from "@/components/ui/progress"
+
+<Progress value={66} />`}>
         <div className="w-full max-w-md">
           <Progress value={progress} />
         </div>

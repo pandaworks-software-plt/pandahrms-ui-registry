@@ -4,7 +4,12 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 export default function AvatarDemo() {
   return (
     <>
-      <DemoSection title="Default">
+      <DemoSection title="Default" code={`import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+
+<Avatar>
+  <AvatarImage src="/avatar.png" alt="John Doe" />
+  <AvatarFallback>JD</AvatarFallback>
+</Avatar>`}>
         <div className="flex items-center gap-4">
           <Avatar>
             <AvatarFallback>JD</AvatarFallback>

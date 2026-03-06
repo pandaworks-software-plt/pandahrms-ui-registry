@@ -5,7 +5,13 @@ import { Input } from "@/components/ui/input";
 export default function LabelDemo() {
   return (
     <>
-      <DemoSection title="Label with Input">
+      <DemoSection title="Label with Input" code={`import { Label } from "@/components/ui/label"
+import { Input } from "@/components/ui/input"
+
+<div className="grid w-full max-w-sm gap-1.5">
+  <Label htmlFor="email">Email</Label>
+  <Input type="email" id="email" placeholder="name@example.com" />
+</div>`}>
         <div className="grid w-full max-w-sm gap-1.5">
           <Label htmlFor="email">Email</Label>
           <Input type="email" id="email" placeholder="name@example.com" />

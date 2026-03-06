@@ -10,7 +10,16 @@ export default function DatePickerDemo() {
 
   return (
     <>
-      <DemoSection title="Date Picker">
+      <DemoSection title="Date Picker" code={`import { useState } from "react"
+import { DatePicker } from "@/components/ui/date-picker"
+
+const [date, setDate] = useState<Date | null>(null)
+
+<DatePicker
+  selected={date}
+  onChange={setDate}
+  placeholder="Pick a date"
+/>`}>
         <div className="grid w-full max-w-sm gap-1.5">
           <p className="text-sm text-muted-foreground">
             Pick a date using the calendar popover.
