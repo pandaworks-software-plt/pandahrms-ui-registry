@@ -3,7 +3,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ShowcaseSidebar, type SidebarCategory } from "./showcase-sidebar";
 import { ComponentPage, DemoSection } from "./component-page";
 
-import App from "@/App";
 
 import ButtonDemo from "./demos/button-demo";
 import InputDemo from "./demos/input-demo";
@@ -458,7 +457,7 @@ const CATEGORIES: SidebarCategory[] = [
 
 function getHashComponent() {
   const hash = window.location.hash.replace("#/", "");
-  const allNames = COMPONENTS.map((c) => c.name).concat("full-demo");
+  const allNames = COMPONENTS.map((c) => c.name);
   return allNames.includes(hash) ? hash : "button";
 }
 
@@ -486,9 +485,7 @@ export default function ShowcaseApp() {
           onSelect={handleSelect}
         />
         <main className="flex-1 overflow-y-auto">
-          {active === "full-demo" ? (
-            <App />
-          ) : component ? (
+          {component ? (
             <div className="mx-auto max-w-4xl px-8 py-8">
               <ComponentPage
                 title={component.title}

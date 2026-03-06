@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { ExternalLink, Search } from "lucide-react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { cn } from "@/lib/utils";
 
@@ -66,17 +66,29 @@ export function ShowcaseSidebar({
             <ul className="space-y-0.5">
               {cat.items.map((item) => (
                 <li key={item.name}>
-                  <button
-                    onClick={() => onSelect(item.name)}
-                    className={cn(
-                      "w-full rounded-md px-2 py-1.5 text-left text-sm transition-colors",
-                      active === item.name
-                        ? "bg-primary/10 font-medium text-primary"
-                        : "text-muted-foreground hover:bg-accent hover:text-foreground"
-                    )}
-                  >
-                    {item.title}
-                  </button>
+                  {item.name === "full-demo" ? (
+                    <a
+                      href={`${import.meta.env.BASE_URL}full-demo.html`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex w-full items-center justify-between rounded-md px-2 py-1.5 text-left text-sm text-muted-foreground hover:bg-accent hover:text-foreground transition-colors"
+                    >
+                      {item.title}
+                      <ExternalLink className="size-3 opacity-50" />
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => onSelect(item.name)}
+                      className={cn(
+                        "w-full rounded-md px-2 py-1.5 text-left text-sm transition-colors",
+                        active === item.name
+                          ? "bg-primary/10 font-medium text-primary"
+                          : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                      )}
+                    >
+                      {item.title}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>
